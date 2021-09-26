@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:bind="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools">
+
+
+<data>
+    <variable
+        name="myModule"
+        type="com.wzj.mymodule.module.MyModule" />
+</data>
+
+<RelativeLayout
+    android:background="@color/color_F5F5F5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    
+    <ImageView
+        android:id="@+id/user_head_portrait_img"
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_centerHorizontal="true"
+        android:background="@mipmap/ic_launcher"
+        android:layout_width="@dimen/dp_80"
+        android:onClick="@{()-> myModule.openImage()}"
+        android:layout_height="@dimen/dp_80"/>
+
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_below="@+id/user_head_portrait_img"
+        android:layout_width="match_parent"
+        android:onClick="@{()-> myModule.toUserInfo()}"
+        android:layout_height="@dimen/dp_50">
+
+        <TextView
+            android:gravity="center"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/user_info"
+            android:text="个人中心"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/ic_launcher"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
+
+
+
+</layout>

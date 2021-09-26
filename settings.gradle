@@ -1,0 +1,6 @@
+include ':homemodule'
+include ':mainModule'
+include ':messageModule'
+include ':myInfoModule'
+include ':lib_res',':lib_common',':app',':loginmodule'
+rootProject.name = "MyBlogApp"

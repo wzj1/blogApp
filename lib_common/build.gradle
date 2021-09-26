@@ -1,0 +1,140 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+
+        buildConfigField "boolean","VERSION_ONLINE", "false"
+        buildConfigField "boolean","VERSION_TEST", "false"
+        consumerProguardFiles 'consumer-rules.pro'
+
+
+        ndk {
+            //设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "x86","arm64-v8a","x86_64"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
+
+    repositories {
+        flatDir{
+            dirs  'libs'
+        }
+    }
+
+
+    dataBinding{
+        android.buildFeatures.dataBinding true
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    //生成libs目录
+    sourceSets {
+        main.jniLibs.srcDirs = ['libs']
+    }
+}
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
+dependencies {
+//    api fileTree(include: ['*.jar'], dir: 'libs')
+    api(fileTree("libs") { [include("*.jar"),include("*.aar")]})
+    api "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    api 'androidx.core:core-ktx:1.3.2'
+    api 'androidx.appcompat:appcompat:1.3.0'
+    api 'com.google.android.material:material:1.2.1'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+
+    //网络请求相关
+    //retrofit相关
+    api 'com.squareup.okhttp3:logging-interceptor:3.12.1'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+    api 'com.squareup.retrofit2:retrofit:2.9.0'
+    api "com.squareup.retrofit2:converter-gson:2.9.0"
+    api "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2"
+    //rxjava2
+    api 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    api 'io.reactivex:rxjava:1.1.7'
+    api 'io.reactivex:rxandroid:1.2.1'
+    //rxlifecycle
+    api 'com.trello.rxlifecycle2:rxlifecycle-kotlin:2.2.0'
+    api 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.2'
+
+    //Kotlin Coroutines 协程
+    api 'com.squareup.okhttp3:okhttp:4.9.0'
+    api 'com.squareup.okio:okio:3.0.0-alpha.4'
+    api 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0'
+    api 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.7'
+
+    //
+
+    api "com.android.support:multidex:1.0.3"
+    //MVVMHabit
+    api 'com.github.goldze:MVVMHabit:4.0.0'
+
+    //XUI
+    api rootProject.ext.xui["xui"]
+    api rootProject.ext.xui["xutil_core"]
+    api rootProject.ext.xui["xutil_sub"]
+//    api rootProject.ext.xui["xutil_refresh_layout"]
+//    api rootProject.ext.xui["xutil_refresh_header"]
+
+    //recyclerview
+    api rootProject.ext.recyclerview["recyclerview"]
+    //recyclerViewBindingAdapter
+    api rootProject.ext.recyclerview["recyclerViewBindingAdapter"]
+
+    // 图片加载
+    api rootProject.ext.glide["glide"]
+    //JSON
+    api rootProject.ext.json["gson"]
+    api rootProject.ext.json["fastjson"]
+
+    //权限
+    api 'pub.devrel:easypermissions:3.0.0'
+
+    //图片选择器
+    api 'io.github.lucksiege:pictureselector:v2.7.3-rc06'
+
+
+    //底部tabBar
+     api('me.majiajie:pager-bottom-tab-strip:2.2.5') {
+         exclude group: 'com.android.support'
+     }
+
+    //阿里路由
+    api rootProject.ext.dependencies["arouter"]
+    api project(":lib_res")
+}

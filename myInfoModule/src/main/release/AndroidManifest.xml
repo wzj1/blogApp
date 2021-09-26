@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wzj.mymodule">
+
+    <application>
+        <activity android:name=".act.UserInfoActivity" android:launchMode="singleTask"></activity>
+    </application>
+
+</manifest>

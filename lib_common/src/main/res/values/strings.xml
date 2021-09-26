@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">我的博客</string>
+    <string name="app_name_haome">首页</string>
+    <string name="app_login_name">登录模块</string>
+    <string name="app_myinfo_name">我的模块</string>
+
+
+
+
+    <!--权限提示语-->
+    <string name="my_permissions_location_state">本应用需要获取定位权限,请您允许以正常使用功能</string>
+    <string name="my_message_permission_always_failed">在设置——应用——权限中开启%1$s权限，以正常使用对应功能</string>
+    <string name="my_message_permission_rationale">本应用需要获取%1$s权限，请授权后使用</string>
+    <string name="my_permission_cancel">取消</string>
+    <string name="my_permission_grant">授权</string>
+    <string name="my_permission_name_calendar">日历</string>
+    <string name="my_permission_name_camera">相机</string>
+    <string name="my_permission_name_contacts">联系人</string>
+    <string name="my_permission_name_location">位置信息</string>
+    <string name="my_permission_name_microphone">麦克风</string>
+    <string name="my_permission_name_phone">电话</string>
+    <string name="my_permission_name_sensors">传感器</string>
+    <string name="my_permission_name_sms">短信</string>
+    <string name="my_permission_name_storage">存储</string>
+    <string name="my_permission_settings">去设置</string>
+
+
+
+</resources>

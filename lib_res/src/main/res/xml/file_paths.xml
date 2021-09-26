@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--相当于getExternalStorageDirectory-->
+    <external-path
+        name="external"
+        path="." />
+
+    <!--添加缓存位置共享(解决应用下载到缓存目录问题）-->
+    <cache-path name="cache-path" path="." />
+    sd卡和一些應用分身的目錄
+    <!--解决无法读取外置内存卡问题/-->
+    <root-path
+        name="root"
+        path="" />
+
+
+</paths>

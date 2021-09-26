@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="regModule"
+            type="com.wzj.loginmodule.module.RegisterModule" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".RegisterActivity">
+
+            <com.xuexiang.xui.widget.button.roundbutton.RoundButton
+                android:id="@+id/id_re_icon"
+                android:layout_marginTop="@dimen/dp_30"
+                android:layout_centerHorizontal="true"
+                android:layout_width="@dimen/dp_90"
+                android:background="@mipmap/ic_launcher"
+                android:layout_height="@dimen/dp_90"/>
+
+            <RelativeLayout
+                android:id="@+id/id_account_rrl_view"
+                android:paddingLeft="@dimen/dp_30"
+                android:layout_marginTop="@dimen/dp_30"
+                android:layout_below="@+id/id_re_icon"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50">
+
+                <TextView
+                    android:id="@+id/id_account_name_tv"
+                    android:paddingLeft="@dimen/dp_4"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_17"
+                    android:gravity="center"
+                    android:text="账        号："
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+                <com.xuexiang.xui.widget.edittext.ClearEditText
+                    android:hint="请输入账号"
+                    android:text="@={regModule.userName}"
+                    android:id="@+id/id_account_et"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/sp_17"
+                    android:layout_toRightOf="@+id/id_account_name_tv"
+                    android:layout_alignParentRight="true"
+                    android:background="@null"
+                    android:paddingRight="@dimen/dp_30"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/id_password_rrl_view"
+                android:paddingLeft="@dimen/dp_30"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_below="@+id/id_account_rrl_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50">
+
+                <TextView
+                    android:id="@+id/id_password_name_tv"
+                    android:paddingLeft="@dimen/dp_4"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_17"
+                    android:gravity="center"
+                    android:text="密        码："
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+                <com.xuexiang.xui.widget.edittext.ClearEditText
+                    android:hint="请输入密码"
+                    android:text="@={regModule.password}"
+                    android:id="@+id/id_et_password"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/sp_17"
+                    android:layout_toRightOf="@+id/id_password_name_tv"
+                    android:layout_alignParentRight="true"
+                    android:background="@null"
+                    android:paddingRight="@dimen/dp_30"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/id_age_rrl_view"
+                android:paddingLeft="@dimen/dp_30"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_below="@+id/id_password_rrl_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50">
+
+                <TextView
+                    android:id="@+id/id_age_name_tv"
+                    android:paddingLeft="@dimen/dp_4"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_17"
+                    android:gravity="center"
+                    android:text="年        龄："
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+                <com.xuexiang.xui.widget.edittext.ClearEditText
+                    android:hint="请输入年龄"
+                    android:text="@={regModule.age}"
+                    android:id="@+id/id_age_count"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/sp_17"
+                    android:layout_toRightOf="@+id/id_age_name_tv"
+                    android:layout_alignParentRight="true"
+                    android:background="@null"
+                    android:paddingRight="@dimen/dp_30"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/id_csri_rrl_view"
+                android:paddingLeft="@dimen/dp_30"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_below="@+id/id_age_rrl_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50">
+
+                <TextView
+                    android:id="@+id/id_csri_name_tv"
+                    android:paddingLeft="@dimen/dp_4"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_17"
+                    android:gravity="center"
+                    android:text="出生年月："
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+                <com.xuexiang.xui.widget.edittext.ClearEditText
+                    android:hint="请输入出生日期"
+                    android:text="@={regModule.nianling}"
+                    android:id="@+id/id_csri_count"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/sp_17"
+                    android:layout_toRightOf="@+id/id_csri_name_tv"
+                    android:layout_alignParentRight="true"
+                    android:background="@null"
+                    android:paddingRight="@dimen/dp_30"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:id="@+id/id_email_rrl_view"
+                android:paddingLeft="@dimen/dp_30"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_below="@+id/id_csri_rrl_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50">
+
+                <TextView
+                    android:id="@+id/id_email_name_tv"
+                    android:paddingLeft="@dimen/dp_4"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_17"
+                    android:gravity="center"
+                    android:text="邮        箱："
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+                <com.xuexiang.xui.widget.edittext.ClearEditText
+                    android:hint="请输入邮箱"
+                    android:gravity="center_vertical"
+                    android:id="@+id/id_email_count"
+                    android:text="@={regModule.qqEmail}"
+                    android:textSize="@dimen/sp_17"
+                    android:layout_toRightOf="@+id/id_email_name_tv"
+                    android:layout_alignParentRight="true"
+                    android:background="@null"
+                    android:paddingRight="@dimen/dp_30"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </RelativeLayout>
+
+
+
+
+            <RelativeLayout
+                android:id="@+id/id_phone_rrl_view"
+                android:paddingLeft="@dimen/dp_30"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_below="@+id/id_email_rrl_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50">
+
+                <TextView
+                    android:id="@+id/id_phome_name_tv"
+                    android:paddingLeft="@dimen/dp_4"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_17"
+                    android:gravity="center"
+                    android:text="手机号码："
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+                <com.xuexiang.xui.widget.edittext.ClearEditText
+                    android:hint="请输入绑定手机号，暂不验证"
+                    android:id="@+id/id_phone_count"
+                    android:gravity="center_vertical"
+                    android:text="@={regModule.phone}"
+                    android:textSize="@dimen/sp_17"
+                    android:layout_toRightOf="@+id/id_phome_name_tv"
+                    android:layout_alignParentRight="true"
+                    android:background="@null"
+                    android:paddingRight="@dimen/dp_30"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </RelativeLayout>
+
+
+            <com.xuexiang.xui.widget.alpha.XUIAlphaButton
+                android:id="@+id/id_register_button"
+                android:layout_below="@+id/id_phone_rrl_view"
+                android:textColor="@color/white"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:layout_marginBottom="30dp"
+                android:layout_alignParentBottom="true"
+                android:text="注册"
+                android:onClick="@{() -> regModule.register()}"
+                android:background="@color/blue"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"/>
+        </RelativeLayout>
+
+
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

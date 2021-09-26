@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ResourceName">
+
+    <data >
+        <variable
+            name="loginViewModule"
+            type="com.wzj.loginmodule.module.LoginModule" />
+    </data>
+
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="30dp"
+        android:layout_height="match_parent"
+        tools:context=".LoginActivity">
+        <ImageView
+            android:layout_centerHorizontal="true"
+            android:id="@+id/id_login_img"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:src="@mipmap/ic_launcher"
+            android:layout_width="90dp"
+            android:layout_height="90dp">
+
+        </ImageView>
+
+        <TextView
+            android:layout_below="@+id/id_login_img"
+            android:id="@+id/id_view01"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+
+        <LinearLayout
+            android:layout_below="@+id/id_view01"
+            android:id="@+id/id_login_account_view"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <TextView
+
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:text="账  号:"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"/>
+
+              <EditText
+                android:id="@+id/id_login_account_et"
+                android:background="@null"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:text="@={loginViewModule.userName}"
+                android:hint="请输入邮箱、手机号、用户名"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_below="@+id/id_login_account_view"
+            android:id="@+id/id_login_pwd_view"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:text="密  码:"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"/>
+
+              <EditText
+                android:background="@null"
+                  android:id="@+id/id_login_pwd_et"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:text="@={loginViewModule.password}"
+                android:hint="请输入密码"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+
+
+
+        <com.xuexiang.xui.widget.alpha.XUIAlphaButton
+            android:id="@+id/id_login_button"
+            android:layout_above="@+id/id_register_button"
+            android:textColor="@color/white"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_marginBottom="30dp"
+            android:text="登录"
+            android:onClick="@{() -> loginViewModule.toLogin()}"
+            android:background="@color/green"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"/>
+
+
+        <com.xuexiang.xui.widget.alpha.XUIAlphaButton
+            android:id="@+id/id_register_button"
+            android:textColor="@color/white"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_marginBottom="30dp"
+            android:layout_alignParentBottom="true"
+            android:text="注册"
+            android:onClick="@{() -> loginViewModule.toRegister()}"
+            android:background="@color/blue"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"/>
+
+    </RelativeLayout>
+
+
+</layout>

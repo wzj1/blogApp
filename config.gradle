@@ -1,0 +1,264 @@
+/**
+ *  第三发配置文件
+ */
+ext {
+
+    def addRepos = [:]
+    android = [
+            compileSdkVersion: 30,
+            buildToolsVersion: "30.0.2",
+            minSdkVersion    : 22,
+            targetSdkVersion : 30,
+            versionCode      : 100,
+            versionName      : "1.0.0",
+    ]
+
+    version = [
+            androidSupportSdkVersion: "29.0.2",
+            retrofitSdkVersion      : "2.4.0",
+            dagger2SdkVersion       : "2.16",
+            glideSdkVersion         : "4.5.0",
+            lifeVersion             : "1.1.1",
+            kotlin_version          : "1.4.32",
+            kotlin_ktx              : "1.7.0-alpha01",
+            appcompat               : "1.3.0",
+    ]
+
+    dependencies = [
+            //kotlin
+            "kotlin"                            : "org.jetbrains.kotlin:kotlin-stdlib:${version["kotlin_version"]}",
+            "androidx-core"                     : "androidx.core:core-ktx:${version["kotlin_ktx"]}",
+            "androidx-appcompat"                : "androidx.appcompat:appcompat:${version["appcompat"]}",
+
+            //mvvm
+            "lifecycle-extensions"              : "android.arch.lifecycle:extensions:${version["lifeVersion"]}",
+            "lifecycle-viewmodel"               : "android.arch.lifecycle:viewmodel:${version["lifeVersion"]}",
+            "lifecycle-compiler"                : "android.arch.lifecycle:compiler:${version["lifeVersion"]}",
+
+            //network
+            "retrofit"                          : "com.squareup.retrofit2:retrofit:${version["retrofitSdkVersion"]}",
+            "retrofit-converter-gson"           : "com.squareup.retrofit2:converter-gson:${version["retrofitSdkVersion"]}",
+            "retrofit-adapter-rxjava2"          : "com.squareup.retrofit2:adapter-rxjava2:${version["retrofitSdkVersion"]}",
+            "okhttp3"                           : "com.squareup.okhttp3:okhttp:3.10.0",
+            "logging-interceptor"               : "com.squareup.okhttp3:logging-interceptor:3.12.1",
+            "glide"                             : "com.github.bumptech.glide:glide:${version["glideSdkVersion"]}",
+            "glide-transformations"             : "jp.wasabeef:glide-transformations:2.0.1",
+            "gson"                              : "com.google.code.gson:gson:2.8.2",
+            "persistentCookieJar"               : "com.github.franmontiel:PersistentCookieJar:v1.0.1",
+
+            //rx2
+            "rxandroid2"                        : "io.reactivex.rxjava2:rxandroid:2.0.2",
+            "rxjava2"                           : "io.reactivex.rxjava2:rxjava:2.1.12",
+            "autodispose"                       : "com.uber.autodispose:autodispose:0.8.0",
+            "autodispose-android-archcomponents": "com.uber.autodispose:autodispose-android-archcomponents:0.8.0",
+            "rxbus"                             : "com.blankj:rxbus:1.5",
+
+            //dagger2
+            "dagger2"                           : "com.google.dagger:dagger:${version["dagger2SdkVersion"]}",
+            "dagger2-android"                   : "com.google.dagger:dagger-android:${version["dagger2SdkVersion"]}",
+            "dagger2-android-support"           : "com.google.dagger:dagger-android-support:${version["dagger2SdkVersion"]}",
+            "dagger2-compiler"                  : "com.google.dagger:dagger-compiler:${version["dagger2SdkVersion"]}",
+            "dagger2-android-processor"         : "com.google.dagger:dagger-android-processor:${version["dagger2SdkVersion"]}",
+
+            //view
+            //日期选择
+            "PickerView"                        : "com.contrarywind:Android-PickerView:4.1.6",
+            //tabLayout
+            "FlycoTabLayout"                    : "com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar",
+            //屏幕适配
+            "autosize"                          : "me.jessyan:autosize:0.7.0",
+            //刷新控件
+            "SmartRefreshLayout"                : "com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-14",
+            //透明状态栏
+            "immersionbar"                      : "com.gyf.immersionbar:immersionbar:2.3.1",
+            //recyclerViewAdapter
+            "RecyclerViewBindingAdapter"        : "com.guoyanggit:RecyclerViewBindingAdapter:1.0.7",
+            //加载json动画控件
+            "lottie"                            : "com.airbnb.android:lottie:2.7.0",
+            //图片选择/拍照库
+            "PictureSelector"                   : "com.github.LuckSiege.PictureSelector:picture_library:v2.2.3",
+            //通过标签直接生成shape，无需再写shape.xml
+            "background"                        : "com.noober.background:core:1.3.1",
+            //上拉加载下拉刷新侧滑删除
+            "pulltorefresh"                     : "'com.lfq:pulltorefresh:1.1'",
+
+            //tools
+            //组件化路由
+            "arouter"                           : "com.alibaba:arouter-api:1.5.1",
+            "arouter-compiler"                  : "com.alibaba:arouter-compiler:1.5.1",
+            "multidex"                          : "com.android.support:multidex:1.0.3",
+            "utilcode"                          : "com.blankj:utilcode:1.23.6",
+
+            //test
+            "junit"                             : "junit:junit:4.12",
+            "runner"                            : "androidx.test.ext:junit:1.1.2",
+            "espresso-core"                     : "androidx.test.espresso:espresso-core:3.3.0",
+            //日志
+            "timber"                            : "com.jakewharton.timber:timber:4.7.0",
+
+
+    ]
+
+
+    xui = [
+            "xui"                 : "com.github.xuexiangjys:XUI:1.1.7",
+            "xutil_core"          : "com.github.xuexiangjys.XUtil:xutil-core:2.0.0",
+            "xutil_sub"           : "com.github.xuexiangjys.XUtil:xutil-sub:2.0.0",
+            "xutil_refresh_layout": "com.github.xuexiangjys.SmartRefreshLayout:refresh-layout:1.1.5",
+            "xutil_refresh_header": "com.github.xuexiangjys.SmartRefreshLayout:refresh-header:1.1.5",
+    ]
+    recyclerview = [
+            "recyclerview"              : "androidx.recyclerview:recyclerview:1.2.1",
+            "recyclerViewBindingAdapter": "com.guoyanggit:RecyclerViewBindingAdapter:1.0.7",
+    ]
+
+    glide = [
+            "glide": "com.github.bumptech.glide:glide:4.12.0",
+            "glide_compiler": "com.github.bumptech.glide:compiler:4.12.0",
+    ]
+    //json集合
+    json = [
+            //gson
+            "gson"    : "com.google.code.gson:gson:2.8.6",
+
+            "fastjson": "com.alibaba:fastjson:1.2.78",
+    ]
+    //鲁班压缩
+    luban = [
+            "luban": "top.zibin:Luban:1.1.8",
+    ]
+
+
+    /**
+     *  // kotlin的依赖库
+     *     api "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+     *     api 'androidx.core:core-ktx:1.7.0-alpha01'
+     *     api 'androidx.appcompat:appcompat:1.3.0'
+     *
+     *     //XUI 需要 recyclerview  glide
+     *     api 'com.github.xuexiangjys:XUI:1.1.7'
+     *     api 'com.google.android.material:material:1.2.1'
+     *     api 'androidx.recyclerview:recyclerview:1.2.1'
+     *     api 'com.github.bumptech.glide:glide:4.12.0'
+     *     api 'com.google.code.gson:gson:2.8.6'
+     *     //工具类
+     *     api 'com.github.xuexiangjys.XUtil:xutil-core:2.0.0'
+     *     api 'com.github.xuexiangjys.XUtil:xutil-sub:2.0.0'
+     *
+     *     //网络请求相关
+     *     //retrofit相关
+     *     api 'com.squareup.okhttp3:logging-interceptor:3.12.1'
+     *     api 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+     *     api 'com.squareup.retrofit2:retrofit:2.9.0'
+     *     api "com.squareup.retrofit2:converter-gson:2.9.0"
+     *     api "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2"
+     *     //rxjava2
+     *     api 'io.reactivex.rxjava2:rxandroid:2.1.1'
+     *     api 'io.reactivex:rxjava:1.1.7'
+     *     api 'io.reactivex:rxandroid:1.2.1'
+     *     //rxlifecycle
+     *     api 'com.trello.rxlifecycle2:rxlifecycle-kotlin:2.2.0'
+     *     api 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.2'
+     *
+     *     //Kotlin Coroutines 协程
+     *     api 'com.squareup.okhttp3:okhttp:4.9.0'
+     *     api 'com.squareup.okio:okio:3.0.0-alpha.4'
+     *     api 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9'
+     *     api 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.7'
+     *     //支持 多dex文件
+     *     api rootProject.ext.dependencies["multidex"]
+     *
+     *     //图片选择器
+     *     api 'com.github.LuckSiege.PictureSelector:picture_library:v2.5.9'
+     *     //适配器
+     *
+     *     api  'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+     *     api  'com.alibaba.android:vlayout:1.2.36'
+     *
+     *      //相机拍摄
+     *     api 'com.github.xuexiangjys:CameraView:1.0.3'
+     *
+     *     //阿里路由
+     *     api rootProject.ext.dependencies["arouter"]
+     *
+     *     //上拉加载下拉刷新侧滑删除
+     *     api 'com.lfq:pulltorefresh:1.1'
+     *
+     *
+     * //    api 'com.github.satyan:sugar:1.5'
+     *
+     *     api "androidx.room:room-runtime:$room_version"
+     *     kapt "androidx.room:room-compiler:$room_version"
+     *
+     *     //自定义相机
+     *     api('com.otaliastudios:cameraview:2.7.0')
+     *
+     *
+     *     //下拉刷新
+     *     api 'com.github.xuexiangjys.SmartRefreshLayout:refresh-header:1.1.5'
+     *     api 'com.github.xuexiangjys.SmartRefreshLayout:refresh-layout:1.1.5'
+     *     api('com.alibaba:fastjson:1.2.76')
+     *
+     *
+     *     //鲁班压缩
+     *     api 'top.zibin:Luban:1.1.8'
+     *
+     *     // Room的Kotlin扩展和对协程的支持
+     *     api "androidx.room:room-ktx:$room_version"
+     *
+     *     testImplementation 'junit:junit:4.13.2'
+     *     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+     *     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+     *
+     *     //阿里云 OSS 图片上传SDK
+     *     api('com.aliyun.dpa:oss-android-sdk:2.9.5')
+     *     api('com.github.chrisbanes:PhotoView:2.0.0')
+     * //banner
+     * //    api('io.github.youth5201314:banner:2.2.1')
+     *     api('com.youth.banner:banner:2.1.0')
+     *
+     *
+     *     api('com.blankj:utilcode:1.28.1')
+     *     api("androidx.camera:camera-core:${camerax_version}")
+     *     api("androidx.camera:camera-camera2:${camerax_version}")
+     *     api("androidx.camera:camera-view:1.0.0-alpha08")
+     *     api("androidx.camera:camera-lifecycle:${camerax_version}")
+     *     api('androidx.camera:camera-view:1.0.0-alpha24')
+     *     api('androidx.camera:camera-extensions:1.0.0-alpha24')
+     *     api('androidx.swiperefreshlayout:swiperefreshlayout:1.1.0')
+     *     api('com.yanzhenjie.recyclerview:support:1.3.2')
+     *
+     *     //版本升级框架
+     * //    api( 'com.teprinciple:updateapputilsx:2.3.0')
+     *     //xml 解析库
+     *     api group: 'org.jsoup', name: 'jsoup', version: '1.12.1'
+     *
+     *     api 'org.greenrobot:eventbus:3.2.0'
+     *     //多渠道打包，多环境打包
+     *     api 'com.meituan.android.walle:library:1.1.7'
+     *
+     *     api 'com.amap.api:3dmap:5.0.0'
+     *     api 'com.amap.api:location:3.3.0'
+     *     api 'com.amap.api:search:5.0.0'
+     */
+
+
+}
+
+
+def addRepos(RepositoryHandler handler) {
+
+    handler.maven {
+        url 'https://maven.google.com/'
+        name 'Google'
+    }
+
+    handler.jcenter()
+    handler.maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    handler.maven { url 'https://oss.jfrog.org/libs-snapshot' }
+    handler.maven { url 'https://jitpack.io' }
+    handler.mavenCentral()
+
+}
+
+ext.addRepos = this.&addRepos

@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.wzj.mymodule.module.UserInfoModule"/>
+        <variable
+            name="userinfo"
+            type="UserInfoModule" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/rl_view_01"
+                    android:background="@color/white"
+                    android:layout_marginTop="@dimen/dp_30"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_50">
+
+                    <LinearLayout
+
+                        android:layout_toLeftOf="@+id/myinfo_iv_r_img"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_alignParentLeft="true"
+                            android:text="用户姓名"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"/>
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_alignParentLeft="true"
+                            android:text=":"
+                            android:layout_width="5dp"
+                            android:layout_height="match_parent"/>
+
+                        <com.xuexiang.xui.widget.edittext.materialedittext.MaterialEditText
+                            android:gravity="center|left"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_alignParentLeft="true"
+                            android:id="@+id/id_user_name_tv"
+                            android:text="@={userinfo.myUserInfo.userName}"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/myinfo_iv_r_img"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:layout_marginRight="@dimen/dp_20"
+                        android:layout_alignParentRight="true"
+                        android:src="@mipmap/ic_launcher"
+                        android:layout_width="@dimen/dp_20"
+                        android:layout_height="@dimen/dp_20"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_below="@+id/rl_view_01"
+                    android:id="@+id/rl_view_02"
+                    android:background="@color/white"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_50">
+
+                    <LinearLayout
+                        android:layout_toLeftOf="@+id/myinfo_iv_r_img01"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_alignParentLeft="true"
+                            android:text="用户昵称"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"/>
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_alignParentLeft="true"
+                            android:text=":"
+                            android:layout_width="5dp"
+                            android:layout_height="match_parent"/>
+
+                        <com.xuexiang.xui.widget.edittext.materialedittext.MaterialEditText
+                            android:gravity="center|left"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_alignParentLeft="true"
+                            android:id="@+id/id_user_nick_name_tv"
+                            android:text="@={userinfo.myUserInfo.userNickName}"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/myinfo_iv_r_img01"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:layout_marginRight="@dimen/dp_20"
+                        android:layout_alignParentRight="true"
+                        android:src="@mipmap/ic_launcher"
+                        android:layout_width="@dimen/dp_20"
+                        android:layout_height="@dimen/dp_20"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_below="@+id/rl_view_02"
+                    android:id="@+id/rl_view_03"
+                    android:background="@color/white"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_50">
+
+                    <LinearLayout
+                        android:layout_toLeftOf="@+id/myinfo_iv_r_img02"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_alignParentLeft="true"
+                            android:text="手机号码"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"/>
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_alignParentLeft="true"
+                            android:text=":"
+                            android:layout_width="5dp"
+                            android:layout_height="match_parent"/>
+
+                        <com.xuexiang.xui.widget.edittext.materialedittext.MaterialEditText
+                            android:gravity="center|left"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_alignParentLeft="true"
+                            android:id="@+id/id_user_phone_tv"
+                            android:text="@={userinfo.myUserInfo.userPhone}"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/myinfo_iv_r_img02"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:layout_marginRight="@dimen/dp_20"
+                        android:layout_alignParentRight="true"
+                        android:src="@mipmap/ic_launcher"
+                        android:layout_width="@dimen/dp_20"
+                        android:layout_height="@dimen/dp_20"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_below="@+id/rl_view_03"
+                    android:id="@+id/rl_view_04"
+                    android:background="@color/white"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_50">
+
+                    <LinearLayout
+                        android:layout_toLeftOf="@+id/myinfo_iv_r_img03"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_alignParentLeft="true"
+                            android:text="用户邮箱"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"/>
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_alignParentLeft="true"
+                            android:text=":"
+                            android:layout_width="5dp"
+                            android:layout_height="match_parent"/>
+
+                        <com.xuexiang.xui.widget.edittext.materialedittext.MaterialEditText
+                            android:gravity="center|left"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_alignParentLeft="true"
+                            android:id="@+id/id_user_email_tv"
+                            android:text="@={userinfo.myUserInfo.userEmail}"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/myinfo_iv_r_img03"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:layout_marginRight="@dimen/dp_20"
+                        android:layout_alignParentRight="true"
+                        android:src="@mipmap/ic_launcher"
+                        android:layout_width="@dimen/dp_20"
+                        android:layout_height="@dimen/dp_20"/>
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_below="@+id/rl_view_04"
+                    android:id="@+id/rl_view_05"
+                    android:background="@color/white"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_50">
+
+                    <LinearLayout
+                        android:layout_toLeftOf="@+id/myinfo_iv_r_img04"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_alignParentLeft="true"
+                            android:text="用户年龄"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"/>
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_alignParentLeft="true"
+                            android:text=":"
+                            android:layout_width="5dp"
+                            android:layout_height="match_parent"/>
+
+                        <com.xuexiang.xui.widget.edittext.materialedittext.MaterialEditText
+                            android:gravity="center|left"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_alignParentLeft="true"
+                            android:id="@+id/id_user_age_tv"
+                            android:text="@={userinfo.userAge}"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/myinfo_iv_r_img04"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:layout_marginRight="@dimen/dp_20"
+                        android:layout_alignParentRight="true"
+                        android:src="@mipmap/ic_launcher"
+                        android:layout_width="@dimen/dp_20"
+                        android:layout_height="@dimen/dp_20"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_below="@+id/rl_view_05"
+                    android:id="@+id/rl_view_06"
+                    android:background="@color/white"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_50">
+
+                    <LinearLayout
+                        android:layout_toLeftOf="@+id/myinfo_iv_r_img06"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_alignParentLeft="true"
+                            android:text="用户生日"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"/>
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_alignParentLeft="true"
+                            android:text=":"
+                            android:layout_width="5dp"
+                            android:layout_height="match_parent"/>
+
+                        <com.xuexiang.xui.widget.alpha.XUIAlphaTextView
+                            android:gravity="center|left"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_alignParentLeft="true"
+                            android:id="@+id/id_user_birth_tv"
+                            android:text="@={userinfo.myUserInfo.userBirthDay}"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/myinfo_iv_r_img06"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:layout_marginRight="@dimen/dp_20"
+                        android:layout_alignParentRight="true"
+                        android:src="@mipmap/ic_launcher"
+                        android:layout_width="@dimen/dp_20"
+                        android:layout_height="@dimen/dp_20"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_below="@+id/rl_view_06"
+                    android:id="@+id/rl_view_07"
+                    android:background="@color/white"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_50">
+
+                    <LinearLayout
+                        android:layout_toLeftOf="@+id/myinfo_iv_r_img07"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_alignParentLeft="true"
+                            android:text="用户星座"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"/>
+
+                        <TextView
+                            android:gravity="center"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_alignParentLeft="true"
+                            android:text=":"
+                            android:layout_width="5dp"
+                            android:layout_height="match_parent"/>
+
+                        <com.xuexiang.xui.widget.alpha.XUIAlphaTextView
+                            android:gravity="center|left"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_alignParentLeft="true"
+                            android:id="@+id/id_user_constell_tv"
+                            android:text="@={userinfo.myUserInfo.userConstellAtion}"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/myinfo_iv_r_img07"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:layout_marginRight="@dimen/dp_20"
+                        android:layout_alignParentRight="true"
+                        android:src="@mipmap/ic_launcher"
+                        android:layout_width="@dimen/dp_20"
+                        android:layout_height="@dimen/dp_20"/>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+        <Button
+            android:layout_marginBottom="@dimen/dp_15"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:layout_marginTop="@dimen/dp_30"
+            android:text="退出登录"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:onClick="@{()-> userinfo.outLogin()}"
+            android:layout_height="@dimen/dp_50">
+        </Button>
+
+        <Button
+            android:layout_marginBottom="@dimen/dp_85"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:layout_marginTop="@dimen/dp_30"
+            android:text="保存"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:onClick="@{()-> userinfo.upUserInfo()}"
+            android:layout_height="@dimen/dp_50">
+        </Button>
+
+    </RelativeLayout>
+
+
+</layout>
